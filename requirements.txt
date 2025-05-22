@@ -1,0 +1,5 @@
+openai
+faiss-cpu
+python-dotenv
+azure-ai-formrecognizer
+streamlit

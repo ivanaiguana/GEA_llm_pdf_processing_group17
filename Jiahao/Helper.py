@@ -1,3 +1,11 @@
+import fitz  
+from PIL import Image
+import pytesseract
+import io
+import re
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+
+
 def extract_toc_pages(pdf_path, lang='deu'):
     doc = fitz.open(pdf_path)  # Open PDF file
     toc_pages = {}
@@ -9,9 +17,5 @@ def extract_toc_pages(pdf_path, lang='deu'):
         text = pytesseract.image_to_string(img, lang=lang)
 
         if "inhaltsverzeichnis" in text.lower():
-            print(f"--- Page {page_num + 1} contains 'Inhaltsverzeichnis' ---")
-            print(text)
-            print("\n")
-            toc_pages[page_num + 1] = text  # store text with human-friendly page number
-
-    return toc_pages
+            #toc_pages[page_num + 1] = text  # store text with human-friendly page number
+            return text

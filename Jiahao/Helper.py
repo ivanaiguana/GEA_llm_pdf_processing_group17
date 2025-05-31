@@ -6,19 +6,22 @@ import re
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 
-def extract_toc_pages(pdf_path, lang='deu'):
-    doc = fitz.open(pdf_path)  # Open PDF file
-    toc_pages = {}
+# def extract_toc_pages(pdf_path, lang='deu'):
+#     doc = fitz.open(pdf_path)  # Open PDF file
+#     toc_pages = {}
 
-    for page_num in range(len(doc)):
-        page = doc.load_page(page_num)
-        pix = page.get_pixmap(dpi=300)
-        img = Image.open(io.BytesIO(pix.tobytes()))
-        text = pytesseract.image_to_string(img, lang=lang)
+#     for page_num in range(len(doc)):
+#         page = doc.load_page(page_num)
+#         pix = page.get_pixmap(dpi=300)
+#         img = Image.open(io.BytesIO(pix.tobytes()))
+#         text = pytesseract.image_to_string(img, lang=lang)
 
-        if "inhaltsverzeichnis" in text.lower():
-            #toc_pages[page_num + 1] = text  # store text with human-friendly page number
-            return text
+#         if "übersicht" in text.lower():
+#         #if "inhaltsverzeichnis" in text.lower() or "übersicht" in text.lower():
+#             return text
+
+#             #toc_pages[page_num + 1] = text  # store text with human-friendly page number
+            
         
 
 def sort_toc_lines(toc_lines):

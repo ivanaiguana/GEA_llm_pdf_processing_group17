@@ -3,3 +3,7 @@ faiss-cpu
 python-dotenv
 azure-ai-formrecognizer
 streamlit
+pymupdf
+pillow
+pytesseract
+yake

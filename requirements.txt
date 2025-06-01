@@ -3,7 +3,16 @@ faiss-cpu
 python-dotenv
 azure-ai-formrecognizer
 streamlit
-pymupdf
-pillow
-pytesseract
-easyocr
+# pymupdf
+# pillow
+# pytesseract
+# easyocr
+accelerate 
+jupyter>=1.0.0
+torch==2.5.1
+transformers==4.21.0
+torchvision==0.20.1
+ipywidgets>=8.0.0
+jupyterlab
+importlib-resources
+flash_attn
